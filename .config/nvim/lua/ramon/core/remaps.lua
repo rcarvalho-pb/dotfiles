@@ -4,15 +4,16 @@ local keymap = vim.keymap -- for conciseness
 
 local opts = { noremap = true, silent = true }
 
-keymap.set("n", "<leader>pv", ":Ex<cr>")
+keymap.set("n", "<leader>pf", ":Ex<cr>")
 
-keymap.set('n', 'q', ':q<CR>')
+keymap.set('n', 'QQ', ':q<CR>')
 
 keymap.set('n', '<C-u>', '<C-u>zz', opts)
 keymap.set('n', '<C-d>', '<C-d>zz', opts)
 
 -- General Keymaps -------------------
 
+keymap.set('i', 'jj', '<ESC>')
 -- use jk to exit insert mode
 keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
 

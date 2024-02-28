@@ -1,2 +1,2 @@
-require("ramon.core.settings")
-require("ramon.core.remap")
+require('ramon.core.remaps')
+require('ramon.core.sets')

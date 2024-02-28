@@ -9,7 +9,9 @@ return {
 
     config = function()
         local telescope = require("telescope")
-        local actions = require("telescope.actions")
+        local actions = require('telescope.actions')
+        local builtin = require("telescope.builtin")
+
 
         telescope.setup({
             defaults = {
@@ -27,10 +29,10 @@ return {
 
         local keymap = vim.keymap
 
-        keymap.set("n", "<leader>pf", "<cmd>Telescope find_files<cr>")
-        keymap.set("n", "<leader>pr", "<cmd>Telescope oldfiles<cr>")
-        keymap.set("n", "<leader>ps", "<cmd>Telescope live_grep<cr>")
-        keymap.set("n", "<leader>pc", "<cmd>Telescope grep_string<cr>")
-        keymap.set("n", "<C-p>", "<cmd>Telescope git_files<cr>")
+        keymap.set('n', '<leader>sf', builtin.find_files, { desc = '[S]earch [F]iles' })
+        keymap.set('n', '<leader>sg', builtin.live_grep, { desc = '[S]earch [G]rep' })
+        keymap.set('n', '<leader>sb', builtin.buffers, { desc = '[S]earch [B]uffers' })
+        keymap.set('n', '<leader>ht', builtin.help_tags, { desc = '[H]elp [T]ags' })
+
     end
 }

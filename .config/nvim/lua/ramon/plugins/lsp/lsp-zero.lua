@@ -1,21 +1,21 @@
 return {
-    "VonHeikemen/lsp-zero.nvim",
-	branch = "v3.x",
-	dependencies = {
-		"neovim/nvim-lspconfig",
-		"hrsh7th/cmp-nvim-lsp",
-		"hrsh7th/nvim-cmp",
-		"L3MON4D3/LuaSnip",
+    'VonHeikemen/lsp-zero.nvim',
+    branch = 'v3.x',
+    dependencies = {
+        "neovim/nvim-lspconfig",
+        "hrsh7th/cmp-nvim-lsp",
+        "hrsh7th/nvim-cmp",
+        "L3MON4D3/LuaSnip",
         'williamboman/mason.nvim',
         'williamboman/mason-lspconfig.nvim',
-	},
+    },
 
     config = function()
-        local lsp_zero = require("lsp-zero")
+        local lsp_zero = require('lsp-zero')
 
-        local lspconfig = require("lspconfig")
-
-        local util = require("lspconfig/util")
+        vim.diagnostic.config({
+            virtual_text = true
+        })
 
         lsp_zero.set_sign_icons({
             error = '✘',
@@ -25,7 +25,7 @@ return {
         })
 
         lsp_zero.on_attach(function(client, bufnr)
-            local opts = {buffer = bufnr, remap = false}
+            local opts = { buffer = bufnr, remap = false }
             lsp_zero.default_keymaps({ buffer = bufnr })
             vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
             vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
@@ -39,10 +39,7 @@ return {
             vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
         end)
 
-        lsp_zero.setup()
-
-        vim.diagnostic.config({
-            virtual_text = true
-        })
+        lsp_zero.setup({})
     end
+
 }

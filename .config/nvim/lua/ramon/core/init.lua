@@ -1,2 +1,2 @@
-require('ramon.core.remaps')
-require('ramon.core.sets')
+require('ramon.core.options')
+require('ramon.core.keymaps')

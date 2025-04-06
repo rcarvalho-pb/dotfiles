@@ -2,6 +2,9 @@ vim.g.mapleader = " "
 
 local keymap = vim.keymap
 
+keymap.set('n', '<leader>m', '<cmd>Mason<CR>', { desc = "Open [M]ason" })
+keymap.set('n', '<leader>l', '<cmd>Lazy<CR>', { desc = "Open [L]azy" })
+
 keymap.set('n', '<leader>pf', ':Ex<CR>', { desc = 'Open project file tree' })
 
 keymap.set('i', 'jk', '<ESC>', { desc = 'Exit insert mode with jk' })

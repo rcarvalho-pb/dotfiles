@@ -54,7 +54,7 @@ return {
     lualine.setup({
       options = {
         -- theme = my_lualine_theme,
-        theme = "catppuccin",
+        theme = "onedark",
       },
       sections = {
         lualine_x = {
@@ -71,3 +71,4 @@ return {
     })
   end,
 }
+

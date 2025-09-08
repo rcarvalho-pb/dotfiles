@@ -14,7 +14,10 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-local plugins = { { import = "ramon.plugins" }, { import = "ramon.plugins.lsp" } }
+local plugins = {
+	{ import = "ramon.plugins" },
+	{ import = "ramon.plugins.lsp" },
+}
 
 require("lazy").setup(plugins, {
 	ui = {

@@ -6,3 +6,4 @@ return {
     indent = { char = "┊" },
   },
 }
+
